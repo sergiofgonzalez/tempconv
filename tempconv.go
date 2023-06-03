@@ -8,6 +8,9 @@ type Celsius float64
 // Fahrenheit temperature type declaration
 type Fahrenheit float64
 
+// Kelvin temperature type declaration
+type Kelvin float64
+
 const (
 	// AbsoluteZeroC is the absolute zero temperature in Celsius
 	AbsoluteZeroC Celsius = -273.15
@@ -25,4 +28,8 @@ func (c Celsius) String() string {
 
 func (f Fahrenheit) String() string {
 	return fmt.Sprintf("%g°F", f)
+}
+
+func (k Kelvin) String() string {
+	return fmt.Sprintf("%gK", k)
 }

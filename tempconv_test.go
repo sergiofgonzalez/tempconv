@@ -87,3 +87,44 @@ func TestPrintFahrenheit(t *testing.T) {
 		})
 	}
 }
+
+func TestPrintKelvin(t *testing.T) {
+	tests := map[string]struct {
+		k        tempconv.Kelvin
+		expected string
+	}{
+		"small positive": {
+			k:        1234.567,
+			expected: "1234.567K",
+		},
+		"small negative": {
+			k:        -1234.567,
+			expected: "-1234.567K",
+		},
+		"positive integer": {
+			k:        1234,
+			expected: "1234K",
+		},
+		"negative integer": {
+			k:        -1234,
+			expected: "-1234K",
+		},
+		"large positive": {
+			k:        987654321.123,
+			expected: "9.87654321123e+08K",
+		},
+		"large negative": {
+			k:        -987654321.123,
+			expected: "-9.87654321123e+08K",
+		},
+	}
+
+	for testName, testCase := range tests {
+		t.Run(testName, func(t *testing.T) {
+			got := testCase.k.String()
+			if got != testCase.expected {
+				t.Errorf("expected %q, but got %q", testCase.expected, got)
+			}
+		})
+	}
+}
