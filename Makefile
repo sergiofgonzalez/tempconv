@@ -27,6 +27,7 @@ cover:
 .PHONY: cover
 
 doc:
+# This requires go install golang.org/x/tools/cmd/godoc@latest to be installed
 	godoc -http localhost:8080
 .PHONY: doc
 
