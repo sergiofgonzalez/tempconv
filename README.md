@@ -15,3 +15,25 @@ tempconv/
 ├── tempconv_test.go
 └── tempconv.go
 ```
+
+To use it in a program simply do:
+
+```bash
+go get github.com/sergiofgonzalez/tempconv
+```
+
+And then, import it and use it in your code:
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/sergiofgonzalez/tempconv"
+)
+
+func main() {
+	fmt.Println("Current temp in Fahrenheit: ", tempconv.CtoF(17))
+}
+```
