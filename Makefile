@@ -1,6 +1,3 @@
-PATH_TO_CHROME := "/opt/google/chrome/chrome"
-
-
 setup:
 	go mod tidy
 .PHONY: setup
@@ -26,8 +23,7 @@ test-v:
 .PHONY: test-v
 
 cover:
-	go tool cover -html=coverage.out -o ./.coverage.html
-	${PATH_TO_CHROME} file://${PWD}/.coverage.html &
+	go tool cover -html=coverage.out
 .PHONY: cover
 
 doc:
